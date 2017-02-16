@@ -7,6 +7,6 @@
 	{% if __SELF__.property('anonymize_ip') %}
 	ga('set', 'anonymizeIp', true);
 	{% endif %}
-	{{ __SELF__.extendedTrackingCode }}
+	{{ __SELF__.extendedTrackingCode|raw }}
     ga('send', 'pageview');
 </script>
