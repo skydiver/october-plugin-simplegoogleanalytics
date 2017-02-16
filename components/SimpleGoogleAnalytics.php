@@ -5,14 +5,22 @@
     use Cms\Classes\ComponentBase;
     use Cms\Classes\Page;
     use Lang;
+    use Event;
 
     class SimpleGoogleAnalytics extends ComponentBase {
+
+        public $extendedTrackingCode;
 
         public function componentDetails() {
             return [
                 'name'        => 'martin.simplegoogleanalytics::lang.components.simplegoogleanalytics.name',
                 'description' => 'martin.simplegoogleanalytics::lang.components.simplegoogleanalytics.description'
             ];
+        }
+
+        public function onRender() {
+            $trackingCodeExtensions = Event::fire('googleanalytics.extend_tracking_code');
+            $this->extendedTrackingCode = implode($trackingCodeExtensions, "\n");
         }
 
         public function defineProperties() {
