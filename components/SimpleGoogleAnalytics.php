@@ -2,17 +2,24 @@
 
     namespace Martin\SimpleGoogleAnalytics\Components;
 
+    use Event, Lang;
     use Cms\Classes\ComponentBase;
     use Cms\Classes\Page;
-    use Lang;
 
     class SimpleGoogleAnalytics extends ComponentBase {
+
+        public $extendedTrackingCode;
 
         public function componentDetails() {
             return [
                 'name'        => 'martin.simplegoogleanalytics::lang.components.simplegoogleanalytics.name',
                 'description' => 'martin.simplegoogleanalytics::lang.components.simplegoogleanalytics.description'
             ];
+        }
+
+        public function onRender() {
+            $trackingCodeExtensions = Event::fire('googleanalytics.extend_tracking_code');
+            $this->extendedTrackingCode = implode($trackingCodeExtensions, "\n");
         }
 
         public function defineProperties() {
@@ -32,6 +39,14 @@
                     'default'           => 'auto',
                     'type'              => 'string',
                     'required'          => true,
+                    'showExternalParam' => false
+                ],
+                'anonymize_ip' => [
+                    'title'             => Lang::get('martin.simplegoogleanalytics::lang.components.simplegoogleanalytics.anonymize_ip_title'),
+                    'description'       => Lang::get('martin.simplegoogleanalytics::lang.components.simplegoogleanalytics.anonymize_ip_desc'),
+                    'default'           => false,
+                    'type'              => 'checkbox',
+                    'required'          => false,
                     'showExternalParam' => false
                 ]
             ];
