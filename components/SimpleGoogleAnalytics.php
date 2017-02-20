@@ -2,10 +2,9 @@
 
     namespace Martin\SimpleGoogleAnalytics\Components;
 
+    use Event, Lang;
     use Cms\Classes\ComponentBase;
     use Cms\Classes\Page;
-    use Lang;
-    use Event;
 
     class SimpleGoogleAnalytics extends ComponentBase {
 
