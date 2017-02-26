@@ -2,7 +2,6 @@
 
     namespace Martin\SimpleGoogleAnalytics;
 
-    use Event;
     use System\Classes\PluginBase;
     use System\Classes\SettingsManager;
 
