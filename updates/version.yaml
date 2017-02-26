@@ -2,3 +2,5 @@
     - Simple Google Analytics initial release
 1.0.2:
     - Add "Anonymize IP" property
+1.0.3:
+    - New option to display tracking code on production environment only

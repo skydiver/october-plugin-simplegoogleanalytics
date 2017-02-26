@@ -41,12 +41,20 @@
                     'required'          => true,
                     'showExternalParam' => false
                 ],
+                'production' => [
+                    'title'             => Lang::get('martin.simplegoogleanalytics::lang.components.simplegoogleanalytics.production'),
+                    'description'       => Lang::get('martin.simplegoogleanalytics::lang.components.simplegoogleanalytics.production_desc'),
+                    'default'           => false,
+                    'type'              => 'checkbox',
+                  //'required'          => false,
+                    'showExternalParam' => false
+                ],
                 'anonymize_ip' => [
                     'title'             => Lang::get('martin.simplegoogleanalytics::lang.components.simplegoogleanalytics.anonymize_ip_title'),
                     'description'       => Lang::get('martin.simplegoogleanalytics::lang.components.simplegoogleanalytics.anonymize_ip_desc'),
                     'default'           => false,
                     'type'              => 'checkbox',
-                    'required'          => false,
+                  //'required'          => false,
                     'showExternalParam' => false
                 ]
             ];
