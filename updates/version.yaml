@@ -6,3 +6,5 @@
     - New option to display tracking code on production environment only
 1.0.4:
     - Enable HTTPS by default
+1.0.5:
+    - Fix for PHP 7.4

@@ -19,7 +19,7 @@
 
         public function onRender() {
             $trackingCodeExtensions = Event::fire('googleanalytics.extend_tracking_code');
-            $this->extendedTrackingCode = implode($trackingCodeExtensions, "\n");
+            $this->extendedTrackingCode = implode("\n", $trackingCodeExtensions);
         }
 
         public function defineProperties() {
